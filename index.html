@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<p id="para">Click the btn</p>
+		<button id="btn">Click me</button>
+		<script type="text/javascript">
+			let para = document.getElementById("para");
+			let btn = document.getElementById("btn");
+
+			btn.addEventListener("click", function () {
+				let varInFunc = "variable";
+				para.innerHTML = "Hello";
+				myFunction("Nuwan", 23, "Male");
+			});
+
+			function myFunction(name, age, gender) {
+				let out = "My name is " + name + ". ";
+				out += "I am " + age + " years old. ";
+				out += "I am " + gender;
+				console.log(out);
+			}
+			function addNumAndDivide(a, b, c) {
+				let x = a + b;
+				console.log(x / c);
+			}
+			// addNumAndDivide(1, 10, 3);
+
+			function fahrenheitToCelcius(value) {
+				let x = value - 32;
+				return (x * 5) / 9;
+			}
+			let fahrenheit = fahrenheitToCelcius(100);
+			// console.log(fahrenheit)
+			// console.log(fahrenheitToCelcius(110))
+			// console.log(fahrenheitToCelcius(10))
+
+			let person = {
+				name: "Nuwan",
+				age: 23,
+				birthDay: "1999-09-16",
+				ageTodate: function () {
+					let d1 = new Date("11/19/2022");
+					let d2 = new Date(this.birthDay);
+					diff = d1.getTime() - d2.getTime();
+					return diff / (1000 * 60 * 60 * 24 * 30 * 12);
+				},
+			};
+
+			let x = 4;
+			let y = 8;
+			let z = 5;
+
+			// if(x===y){
+			//     console.log('x equals y and not equals z ')
+			// }else if(x==z) {
+			//     console.log('x equals z')
+			// }else{
+			//     console.log('something else')
+			// }
+
+			let name = "danula";
+
+			// switch(name){
+			//     case 'nuwan':
+			//         console.log('this is nuwan')
+			//         break;
+			//     case 'sanjaya':
+			//         console.log('this is sanjaya')
+			//         break;
+			//     default:
+			//         console.log('someone else')
+			//         break;
+			// }
+
+			// console.log(students[0])
+			// console.log(students[1])
+			// console.log(students[2])
+
+			// students.reverse()
+
+			// for(let i=0; i<students.length; i++){
+			//     console.log(students[i])
+			// }
+
+			// for (let student in students){
+			//     console.log(student)
+			// }
+
+			let students = ["Nuwan", "Sanjaya", "Danula", "Isuru", "Nuwan"];
+
+			let uniqueStudents = new Set(students);
+			uniqueStudents.add("Kasun");
+
+			// console.log(students)
+			// console.log(uniqueStudents)
+
+			let studentsAges = new Map([
+				["Nuwan", 15],
+				["Sanjaya", 13],
+				["Danula", 10],
+			]);
+
+			studentsAges.set("Kasun", 16);
+			// studentsAges.delete('Nuwan')
+
+			console.log(studentsAges);
+			console.log(studentsAges.size);
+			console.log(studentsAges.has("Kasun"));
+
+			// studentsAges.forEach(function (value, index, array){
+			//     console.log(index, value)
+			// }
+			// )
+
+			// for (let student of students){
+			//     switch(student){
+			//     case 'Nuwan':
+			//         console.log('this is nuwan')
+			//         break;
+			//     case 'Sanjaya':
+			//         console.log('this is sanjaya')
+			//         break;
+			//     default:
+			//         console.log('someone else')
+			//         break;
+			//     }
+			// }
+			// let i = 1;
+			// while (1){
+			//     console.log(i)
+			//     i++
+			//     if(i<10){
+			//         // continue;
+			//     }else{
+			//         break;
+			//     }
+			//     console.log('a')
+			// }
+
+			// console.log(person.ageTodate())
+
+			try {
+				let result = 0;
+				if (result == 0) {
+					throw "x is 0";
+				}
+			} catch (err) {
+				console.log(err);
+			}
+		</script>
+	</body>
+</html>
